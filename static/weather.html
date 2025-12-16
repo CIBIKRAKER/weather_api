@@ -3,9 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather Card Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    
+    <div class="background">
+    </div>
+
+    <div class="main-content-wrapper"> 
+        
+        <div class="search-container">
+            <input type="text" id="city-input" placeholder="Enter City Name..." aria-label="City Name">
+            <button id="search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <div class="weather-card">
+            <div class="current-weather">
+                <div class="temp-icon">
+                    <span class="temperature" id="current-temp">15&deg;</span>
+                    <i class="fas fa-cloud-showers-heavy icon" id="current-icon"></i>
+                </div>
+                <div class="location-details">
+                    <span class="location" id="city-name">Istanbul</span>
+                    <span class="date" id="current-date">Date: 11.12.2025</span>
+                </div>
+            </div>
+
+            <div class="min-max">
+                <span class="max" id="max-temp">Max: 26 &deg;C</span>
+                <span class="min" id="min-temp">Min: 8 &deg;C</span>
+            </div>
+
+            <div class="forecast" id="forecast-container">
+                <div class="day-forecast">
+                    <span class="day">Tuesday</span>
+                    <i class="fas fa-cloud-showers-heavy forecast-icon"></i>
+                    <span class="temp">21 &deg;C</span>
+                </div>
+                <div class="day-forecast">
+                    <span class="day">Wednesday</span>
+                    <i class="fas fa-cloud forecast-icon"></i>
+                    <span class="temp">26 &deg;C</span>
+                </div>
+                <div class="day-forecast">
+                    <span class="day">Thursday</span>
+                    <i class="fas fa-sun forecast-icon"></i>
+                    <span class="temp">31 &deg;C</span>
+                </div>
+                <div class="day-forecast">
+                    <span class="day">Friday</span>
+                    <i class="fas fa-sun forecast-icon"></i>
+                    <span class="temp">29 &deg;C</span>
+                </div>
+                <div class="day-forecast">
+                    <span class="day">Saturday</span>
+                    <i class="fas fa-sun forecast-icon"></i>
+                    <span class="temp">32 &deg;C</span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
