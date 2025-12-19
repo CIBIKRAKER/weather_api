@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Weather Card - Istanbul Example</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="background">
+    </div>
+
+    <div class="search-container">
+        <form action="/weather" method="POST"> 
+            <input type="text" id="city-input" name="city" placeholder="Enter City Name..." aria-label="City Name">
+            <button type="submit" id="search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+    </div>
+
+    <div class="weather-card">
+        
+        <div class="location-header">
+            <span class="location" id="city-name">--</span> 
+
+        </div>
+
+        <div class="main-weather-display">
+            
+            <div class="current-left">
+                <span class="temperature" id="current-temp">--&deg;</span> 
+                
+                <div class="min-max">
+                    <span class="max">Max: <span id="max-temp">--</span> &deg;C</span>
+                    <span class="min">Min: <span id="min-temp">--</span> &deg;C</span>
+                </div>
+            </div>
+
+            <div class="today-highlight-card">
+                <i class="highlight-icon fas fa-wind" id="highlight-weather-icon"></i> 
+                
+                <div class="highlight-details">
+                    <span class="highlight-temp" id="highlight-temp">--&deg;</span> 
+                    <span class="highlight-condition" id="weather-description">--</span> 
+                    <span class="highlight-date" id="current-date">--</span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>

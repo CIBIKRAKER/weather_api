@@ -1,0 +1,247 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+    background-color: #f4f4f9;
+    flex-direction: column; 
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(9, 8, 70, 0.9)),
+        url("weather.png");
+    background-size: cover;
+    background-position: center;
+    z-index: -1; 
+}
+
+.weather-card {
+    width: 650px; 
+    padding: 40px 50px;
+    border-radius: 20px;
+    background-color: #AED1F3; 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.location-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.location {
+    font-size: 2.5em; 
+    font-weight: 500;
+}
+
+.general-icon {
+    font-size: 3em; 
+    opacity: 0.7;
+}
+
+.main-weather-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.current-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+
+.temperature {
+    font-size: 6em; 
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.min-max {
+    display: flex;
+    gap: 20px;
+    font-size: 1em;
+    opacity: 0.8;
+}
+
+.today-highlight-card {
+    width: 300px; 
+    background-color: white; 
+    border-radius: 10px;
+    padding: 40px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.highlight-icon {
+    font-size: 4em; 
+    padding-right: 50px;
+}
+
+.highlight-details {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    justify-content: center;
+}
+
+.highlight-temp {
+    font-size: 2.5em;
+    font-weight: 500;
+}
+
+.highlight-condition {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.highlight-date {
+    font-size: 0.85em;
+    opacity: 0.6;
+}
+
+
+.search-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px auto; 
+    width: 550px; 
+    max-width: 90%; 
+}
+
+.search-container form {
+    display: flex;
+    width: 100%;
+}
+
+#city-input {
+    padding: 12px 15px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+    flex-grow: 1; 
+    margin-bottom: 0;
+    height: 18px; 
+    transition: border-color 0.3s;
+    background-color: white; 
+}
+
+#city-input:focus {
+    border-color: #77aadd;
+}
+
+#search-button {
+    padding: 12px 18px;
+    background-color: #333; 
+    color: white; 
+    border: none;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    font-size: 1em;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+#search-button:hover {
+    background-color: #555;
+}
+
+/* Back Button */
+.back-button {
+    padding: 10px 40px;
+    border: 1px solid #333; 
+    border-radius: 25px;
+    background: none;
+    color: #333;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.back-button:hover {
+    background-color: #333;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .search-container {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .weather-card {
+        width: 90%;
+        padding: 20px 20px;
+    }
+
+    .main-weather-display {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .today-highlight-card {
+        width: 90%;
+        padding: 20px;
+        margin: 30px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .highlight-icon {
+        margin-bottom: 10px;
+        font-size: 3.5em;
+        padding: 0;
+    }
+
+    .highlight-details {
+        align-items: center;
+    }
+
+    .location {
+        font-size: 2em;
+    }
+
+    .temperature {
+        font-size: 5em;
+    }
+    
+    .current-left {
+        align-items: center;
+        padding-left: 0;
+    }
+
+    .min-max {
+        justify-content: center;
+    }
+}
