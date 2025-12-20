@@ -12,8 +12,18 @@ API_KEY = Config.API_KEY
 class WeatherAPI:
 
     def fetch_weather(self, city):
-        url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
-        response = requests.get(url)
+        try:
+            url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
+        except Exception as e:
+            print(f"Error constructing URL: {e}")
+            return None
+        
+        try:
+            response = requests.get(url)
+        except requests.RequestException as e:
+            print(f"Error fetching weather data: {e}")
+            return None
+        
         weather_info = {}
         if response.status_code == 200:
             data = response.json()
@@ -27,7 +37,7 @@ class WeatherAPI:
             "temp_max": round(temp_max),
             "description": data["weather"][0]["description"],
             "main": data["weather"][0]["main"],   
-            "date": str(datetime.datetime.now().strftime("%A, %B %d"))
+            "date": str(datetime.datetime.now().strftime("%A, %B %d, %H:00"))
         }
         return weather_info
     
